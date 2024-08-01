@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Slaydlar</title>
+</head>
+<body>
+		<img  src="img/albert.jpg" class="slider">
+		<img  src="img/leonardo.jpg" class="slider">
+		<img  src="img/paunkare.jpg" class="slider">
+
+	<script>
+		var Index = 0;
+		slaydlar();
+		function slaydlar(){
+			var i,x;
+			x=document.getElementsByClassName('slider');
+			for (i = 0; i < x.length; i++) {
+                x[i].style.display="none";
+			}
+			Index++;
+			if (Index > x.length) { Index = 1; }
+			x[Index - 1].style.display = "block";
+			setTimeout(slaydlar, 1000);
+		}
+		
+		
+	</script>
+</body>
+</html>

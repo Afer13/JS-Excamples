@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stepik</title>
+</head>
+<body>
+	<script>
+		function Array111(a,b){
+		var Arr=["Иванов"],Arr1=[a],Arr2=[b];
+		var x=Arr1.concat(Arr2);
+		var c=x.join("");
+		var reverse=0;
+		while (c != 0)
+            {
+                reverse = reverse * 10;
+                reverse = reverse + c % 10;
+                c = Math.floor(c / 10);
+            }
+		Arr.unshift(reverse);
+        
+		
+		return Arr.join("");
+		
+	}
+	alert(Array111(435,678));
+</script>
+</body>
+</html>

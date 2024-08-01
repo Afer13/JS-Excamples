@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DoblFor</title>
+</head>
+<body>
+    <label>Bir Eded Daxil Edin :</label>
+    <input type="text" id="Sayi"/>
+    <button type="button" id="Ok" onclick="onFunction();">Ok</button>
+    <br />
+    <br />
+    <h2 id="result"></h2>
+    <script>
+        var Result, Sayi, S = 0, t = 1;, Cem="" ;
+        Result = document.querySelector('#result');
+        Sayi = document.querySelector('#Sayi');
+        function onFunction() {
+            S = Number(Sayi.value);
+            for (var i = 1; i <= S*2; i++) {
+                
+                if (i <= S) {
+                    for (var j = 1; j <= i; j++) {
+                        Cem += j + " ";
+
+                    }
+                    
+                }
+                
+               else if (i > S) {
+                    for (var j = 1; j == (i-t); j--) {
+                        
+                        Cem += j+" ";
+                    }
+                    t += 2;
+                }
+                Cem += "<br>";
+            }
+            Result.innerHTML = Cem;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "coord": { "lon": 48.5152, "lat": 41.3626 },
+  "weather": [
+    { "id": 800, "main": "Clear", "description": "aydın səma", "icon": "01d" }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 28.87,
+    "feels_like": 27.27,
+    "temp_min": 28.87,
+    "temp_max": 28.87,
+    "pressure": 1015,
+    "humidity": 14,
+    "sea_level": 1015,
+    "grnd_level": 950
+  },
+  "visibility": 10000,
+  "wind": { "speed": 3.5, "deg": 97, "gust": 4.32 },
+  "clouds": { "all": 0 },
+  "dt": 1661666756,
+  "sys": { "country": "AZ", "sunrise": 1661652482, "sunset": 1661700417 },
+  "timezone": 14400,
+  "id": 585221,
+  "name": "Quba",
+  "cod": 200
+}
+

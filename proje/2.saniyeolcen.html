@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="../bootstrap/css/bootstrap.min.css"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="css/2.saniyeolcen.css" type="text/css" />
+
+    <title>Saniyə Ölçən</title>
+  </head>
+  <body style="background-color: rgba(255, 145, 0, 0.575)">
+    <div class="box">
+      <h1 class="basliq">SANİYƏÖLÇƏN</h1>
+      <div class="sayi">
+        <h1 class="sat">00</h1>
+        <h1 class="noq">:</h1>
+        <h1 class="deq">00</h1>
+        <h1 class="noq">:</h1>
+        <h1 class="san">00</h1>
+        <h1 class="noq">.</h1>
+        <h1 class="mil">00</h1>
+      </div>
+      <button id="button1" onclick="start();" class="btn btn-success">Start</button>
+      <button id="button2" onclick="stop();" class="btn btn-danger">Stop</button>
+      <button id="button3" onclick="restart();" class="btn btn-primary">Restart</button>
+    </div>
+
+    <!-- ------------------------ botstrap js (start) ------------------------>
+    <script src="../bootstrap/js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- ------------------------  mövzu  ------------------------>
+    <script src="js/2.saniyeolcen.js"></script>
+  </body>
+</html>

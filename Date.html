@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>stepik</title>
+</head>
+<body>
+	<script>
+		/*
+		var vaxt=new Date("19 October 1909 10:27");
+		var vaxt1=new Date("28 March 1909 00:59");
+		document.write(vaxt.getTime()+"<br>"+vaxt1.getTime());
+		*/
+		function testDateTime() {
+			var a1=new Date("2015-02-21");
+			var b1=new Date("2015-03-21");
+			var d,e;
+			if(a1.getTime()>b1.getTime())
+			{
+				d=a1.getDay()-1;
+			}
+			else if(a1.getTime()<b1.getTime())
+			{
+				d=b1.getDay()-1;
+			}
+			switch((d))
+			{
+				
+				case 0:e="Понедельник";break;
+				case 1:e="Вторник";break;
+				case 2:e="Среда";break;
+				case 3:e="Четверг";break;
+				case 4:e="Пятница";break;
+				case 5:e="Суббота";break;
+				case 6:e="Воскресенье";break;
+				default :e="Воскресенье";
+			}
+			return e;
+		}
+
+		document.write(testDateTime());
+	</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="css/12.gerisayim.css" />
+    <title>Numune</title>
+  </head>
+  <body>
+    <section class="section-center">
+      <!-- image -->
+      <article class="gift-img">
+        <img src="img/12.jpg" alt="gift" />
+      </article>
+      <!-- info -->
+      <article class="gift-info">
+        <h3>New web sayt</h3>
+        <h4 class="giveaway">Yeni idarəetmə panelli web sayt</h4>
+        <p>
+          Yeni web saytda olduqca yeni,gözçıcı,olduqca klasik dzayınlar yer
+          alacaq. Bu web saytın idarə edilməsi idarəetmə paneli vasitəsi ilə
+          yerinə yetiriləcək. Bu web saytın açılması ümüdvaramki bir çox
+          internet istifadəçisinə yararlı olacaq.
+        </p>
+        <h5>Yeni web saytın açılmasına qalan zaman :</h5>
+        <br />
+
+        <div class="deadline">
+          <!-- days -->
+          <div class="deadline-format">
+            <div>
+              <h4 class="days">0</h4>
+              <span>Gün</span>
+            </div>
+          </div>
+          <!-- end of days -->
+          <!-- days -->
+          <div class="deadline-format">
+            <div>
+              <h4 class="hours">00</h4>
+              <span>Saat</span>
+            </div>
+          </div>
+          <!-- end of days -->
+          <!-- minutes -->
+          <div class="deadline-format">
+            <div>
+              <h4 class="minutes">00</h4>
+              <span>Dəq</span>
+            </div>
+          </div>
+          <!-- end of days -->
+          <!-- minutes -->
+          <div class="deadline-format">
+            <div>
+              <h4 class="seconds">00</h4>
+              <span>San</span>
+            </div>
+          </div>
+          <div id="son">
+            <h5>
+              Zaman Bitdi.Təbriklər.
+              <a href="http://www.azcoderaz.epizy.com" target="_blank"
+                >Yeni Sayta</a
+              >
+              keçid edə bilərsiniz.
+            </h5>
+          <!-- end of days -->
+        </div>
+      </article>
+
+      
+
+      <button id="okGeri" class="btn">Geri sayım tarixi təyin et</button>
+      
+      <form id="vaxt">
+        <div>
+          <label class="yazi">İl</label><br />
+          <input class="blok" type="number" min="2022" id="il" value="0"/>
+        </div>
+        <div>
+          <label class="yazi">Ay</label><br />
+          <input class="blok" type="number" max="12" min="0" id="ay" value="0"/>
+        </div>
+        <div>
+            <label class="yazi">Gün</label><br />
+            <input class="blok" type="number" max="31" min="0" id="gun" value="0"/>
+          </div>
+        <div>
+          <label class="yazi">Saat</label><br />
+          <input class="blok" type="number" max="59" min="0" id="sat" value="0"/>
+        </div>
+        <div>
+          <label class="yazi">Dəqiqə</label><br />
+          <input class="blok"  type="number" max="59" min="0" id="deq" value="0"/>
+        </div>
+        <div>
+          <button class="btnOk" onclick="okok();" type="button">OK</button>
+        </div>
+        <div>
+          <button class="btnNo" type="button">Ləğv Et</button>
+        </div>
+      </form>
+    </section>
+
+    <!--Font Awosome-->
+    <script src="../fontawesome/js/all.min.js"></script>
+    <!--Proje-->
+    <script src="js/12.gerisayimm.js"></script>
+  </body>
+</html>

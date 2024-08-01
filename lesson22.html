@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lesson22</title>
+</head>
+<body onload="onLoad();">
+	<div id="result"></div><br>
+	<div id="result2"></div><br>
+	<div id="result3"></div><br>
+	<div id="result4"></div><br>
+
+	<button type="button" onclick="onClick();">Click</button>
+	<button type="button" ondblclick ="onDblClick();">DoblClick</button><br><br><br><br><br><br><br><br><br>
+	<p style="font-size: 20px;">1-ci cercive</p>
+	<p style="width: 50%;height: 200px;border: 3px solid #961D1F;" onmouseover="onMouseOver();"></p><br><br><br><br><br><br>
+
+	<p style="font-size: 20px;">2-ci cercive</p>
+	<p style="width: 50%;height: 200px;border: 3px solid #961D1F;"  onmouseout="onMouseOut();"></p>
+	<br><br><br>
+
+	<p style="font-size: 20px;">3-cu cercive</p>
+	<b><p id="result5" style="font-size: 22px;width: 50%;height: 200px;border: 3px solid #961D1F;" onmousedown="onMouseDown();" onmouseup="onMouseUp();">Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov Afer Rehimov </p>
+	</b>
+	<br><br><br><br><br><br>
+	<p style="font-size: 20px;">1-ci cercive</p>
+	<p style="width: 50%;height: 200px;border: 3px solid #961D1F;" onmousemove="onMouseMove(event);"></p>
+	<p id="result6" style="font-size: 20px;"></p>
+
+	<br><br><br>
+	<input type="text" id="key" onfocus="onFocus();" onblur="onBlur();">
+	<br>
+	<br>
+	<input type="text" onselect="onSelect();" value="Bunu secsen mesaj gelecek">
+	<script >
+		function onLoad(){
+			document.getElementById('result').innerHTML="Seyfe Yuklendi diye onLoad mesji verildi ...";
+		}
+		function onClick(){
+			document.getElementById('result2').innerHTML="Click duymesine basildi diye onClick mesji verildi ...";
+		}
+		function onDblClick(){
+			document.getElementById('result3').innerHTML="DoblClick duymesine basildi diye onDblClick mesji verildi ...";
+		}
+		function onMouseOver(){
+			alert("onMouseOver-mausu 1 ci cercivenin icine daxil etdiyinize gore verilen mesaj");
+		}
+		function onMouseOut(){
+			alert("onMouseOut-mausu 1 ci cerciveden xaric  etdiyinize gore verilen mesaj");
+		}
+		function onMouseDown(){
+			document.getElementById('result5').style.color="red";
+		}
+		function onMouseUp(){
+			document.getElementById('result5').style.color="green";
+		}
+		function onMouseMove(e){
+			var x=e.clientX;
+			var y=e.clientY;
+			document.getElementById('result6').innerHTML="X : "+x+"   Y : "+y;
+		}
+		function onFocus(){
+			document.getElementById('key').style.borderColor="green";
+		}
+		function onBlur(){
+			document.getElementById('key').style.borderColor="red";
+		}
+		function onSelect(){
+			alert("Sen Son Setri secdin");
+		}
+	</script>
+</body>
+</html>

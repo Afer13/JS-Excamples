@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Animasiya</title>
+</head>
+<body>
+    <style>
+        #bkub {
+            width: 600px;
+            height: 600px;
+            background: #690404;
+            position: relative;
+        }
+
+        #kkub {
+            width: 50px;
+            height: 50px;
+            background: #0094ff;
+            position: absolute;
+        }
+    </style>
+    <div id="bkub">
+        <div id="kkub"></div>
+    </div>
+    <input type="button" onclick="Start();" value="Herekete basla" />
+    <input type="button" onclick="Son()" ; value="Hereketi Sonlandir" />
+    <script>
+        var hereketCss, hun = 0, uz = 0, speed;
+        hereketCss = document.querySelector('#kkub');
+
+
+        function Animation() {
+
+            if (uz == 0 && hun == 0) {
+                uz++;
+                hereketCss.style.left = uz + "px";
+            }
+            else if (uz > 0 && uz < 550 && hun == 0) {
+                uz++;
+                hereketCss.style.left = uz + "px";
+            }
+            else if (uz == 550 && hun == 0) {
+                hun++;
+                hereketCss.style.top = hun + "px";
+            }
+            else if (uz == 550 && hun > 0 && hun < 550) {
+                hun++;
+                hereketCss.style.top = hun + "px";
+            }
+            else if (uz == 550 && hun == 550) {
+                uz--;
+                hereketCss.style.top = uz + "px";
+            }
+            else if (uz > 0 && uz < 550 && hun == 550) {
+                uz--;
+                hereketCss.style.left = uz + "px";
+            }
+            else if (uz == 0 && hun == 550) {
+                hun--;
+                hereketCss.style.top = hun + "px";
+            }
+            else if (uz == 0 && hun < 550 && hun > 0) {
+                hun--;
+                hereketCss.style.top = hun + "px";
+            }
+
+        }
+        function Start() {
+            speed = setInterval(Animation, 3);
+        }
+        function Son() {
+            clearInterval(speed);
+        }
+    </script>
+</body>
+</html>

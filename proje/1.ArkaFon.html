@@ -1,0 +1,156 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>BackGround</title>
+</head>
+<body id="Body">
+    <style>
+        #Rstart,#Rstop,#Gstart,#Gstop,#Bstart,#Bstop{
+            width:120px;
+            height:30px;
+            font-size: 19px;
+            border:none;
+            border-radius:10px;
+        }
+        #Rstart {
+            background: #a70000;
+            color: #fff;
+            margin: 4px 0 4px 0;
+        }
+        #Rstop {
+            background: #808080;
+            color: #000;
+            display: none;
+            margin:4px 0  4px 0;
+        }
+        #Gstart {
+            background: #39be0c;
+            color: #fff;
+            margin: 4px 0 4px 0;
+        }
+        #Gstop {
+            background: #808080;
+            color: #000;
+            display: none;
+            margin: 4px 0 4px 0;
+        }
+        #Bstart {
+            background: #1146f2;
+            color: #fff;
+            margin: 4px 0 4px 0;
+        }
+        #Bstop {
+            background: #808080;
+            color: #000;
+            display: none;
+            margin: 4px 0 4px 0;
+        }
+        #result{
+            padding:5px;
+            background:#fff;
+            width:180px;
+            border:1px solid #000;
+            border-radius:6px;
+        }
+        #Max{
+            width:450px;
+            height:65px;
+            border-radius:5px;
+            border:none;
+            background:#fff;
+        }
+    </style>
+    <button id="Rstart" type="button" onclick="rstart();">R start</button>
+    <button id="Rstop" type="button" onclick="rstop();">R stop</button>
+    <button id="Gstart" type="button" onclick="gstart();">G start</button>
+    <button id="Gstop" type="button" onclick="gstop();">G stop</button>
+    <button id="Bstart" type="button" onclick="bstart();">B start</button>
+    <button id="Bstop" type="button" onclick="bstop();">B stop</button>
+    <br />
+    <b><label id="Max"></label></b>
+    <h2 id="result">rgb(0,0,0)</h2>
+    <script>
+        var Body, Rstart, Rstop, Gstart, Gstop, Bstart, Bstop, Result,Max,R=0,G=0,B=0,RR,GG,BB;
+        Body = document.querySelector('#Body');
+        Rstart = document.querySelector('#Rstart');
+        Rstop = document.querySelector('#Rstop');
+        Gstart = document.querySelector('#Gstart');
+        Gstop = document.querySelector('#Gstop');
+        Bstart = document.querySelector('#Bstart');
+        Bstop = document.querySelector('#Bstop');
+        Result = document.querySelector('#result');
+        Max = document.querySelector('#Max');
+
+//-----------------------------------RRRRRRRRRRRRRRRRRRRRRRRRRRRRR--------------------------
+        function rstart() {
+            var message;
+            Rstop.style.display = "block";
+            Rstart.style.display = "none";
+            
+            if (R <= 255) {
+                R++;
+                Body.style.background = "rgb(" + R + "," + G + "," + B + ")";
+                Result.innerHTML = "rgb(" + R + "," + G + "," + B + ")";
+            }
+            else {
+                Max.innerHTML = "Maksimum dəyər 256 ola bilər.Stop edin.";
+                clearTimeout(RR);
+                R = 0;
+            }
+            RR=setTimeout(rstart, 50);
+        }
+
+        function rstop() {
+            clearTimeout(RR);
+            Rstart.style.display = "block";
+            Rstop.style.display = "none";
+        }
+//----------------------------------------------------G GGGGGGGGGGGGGGGGGGGGG--------------------
+        function gstart() {
+            var message;
+            Gstop.style.display = "block";
+            Gstart.style.display = "none";
+
+            if (G <= 255) {
+                G++;
+                Body.style.background = "rgb(" + R + "," + G + "," + B + ")";
+                Result.innerHTML = "rgb(" + R + "," + G + "," + B + ")";
+            }
+            else {
+                Max.innerHTML = "Maksimum dəyər 256 ola bilər.Stop edin.";
+                clearTimeout(GG);
+                G = 0;
+            }
+            GG = setTimeout(gstart, 50);
+        }
+        function gstop() {
+            clearTimeout(GG);
+            Gstart.style.display = "block";
+            Gstop.style.display = "none";
+        }
+
+        //----------------------------------------------------BBBBBBBBBBBBBBBBBBBBBB--------------------
+        function bstart() {
+            var message;
+            Bstop.style.display = "block";
+            Bstart.style.display = "none";
+
+            if (B <= 255) {
+                B++;
+                Body.style.background = "rgb(" + R + "," + G + "," + B + ")";
+                Result.innerHTML = "rgb(" + R + "," + G + "," + B + ")";
+            }
+            else {
+                Max.innerHTML = "Maksimum dəyər 256 ola bilər.Stop edin.";
+                clearTimeout(BB);
+                B = 0;
+            }
+            BB = setTimeout(bstart, 50);
+        }
+        function bstop() {
+            clearTimeout(BB);
+            Bstart.style.display = "block";
+            Bstop.style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>4 ƏMƏLİYYAT</title>
+</head>
+<body>
+
+	<style>
+		body{
+			color: #fff;
+			background: #9b5c24;
+		}
+		#game{
+			width: 440px;
+			background: #237ccc;
+			padding: 20px;
+			text-align: center;
+			margin: auto;
+			margin-top: 10%;
+			border: solid 3px #121ac4;
+			border-radius: 20px;
+		}
+		h1{
+			margin: 0 0 18px 0;
+			border: solid 2px #a30866;
+			border-radius: 10px;
+			padding: 5px;
+			font-weight: 400;
+		}
+		span{
+			font-size: 125%;
+			padding: 13px;
+		}
+		#result{
+			width: 100px;
+		}
+		#ok{
+			margin-top: 10px;
+			padding: 5px;
+			border: none;
+			width: 100px;
+			background: #a00606;
+			color: #fff;
+		}
+		#ok:hover{
+			background: #108430;
+		}
+		#True,#False{
+			font-size: 150%;
+			margin-top: 10px;
+			padding: 10px;
+			display: inline-block;
+		}
+		#True{
+			background: #3db041;
+		}
+		#False{
+			background: #e31d1d;
+		}
+		#newgame{
+			font-size: 20px;
+			background: #a013d3;
+			color: #fff;
+			margin: 20px 0 10px 0;
+			padding: 10px;
+			width: 100%;
+			border-radius: 10px;
+		}
+		#newgame:hover{
+			background: #c459ea;
+		}
+		#endgame{
+			font-size: 20px;
+			background: #b20e19;
+			color: #fff;
+			margin: 20px 0 10px 0;
+			padding: 10px;
+			width: 100%;
+			border-radius: 10px;
+		}
+		#endgame:hover{
+			background: #de525b;
+		}
+	</style>
+	<div id="game">
+		<h1>4 ƏMƏLİYYAT OYUNU</h1>
+		<span id="number1">0</span>
+		<span id="operator">*</span>
+		<span id="number2">0</span>
+		<span>=</span>
+		<input type="text" id="result">
+		<input type="button" value="Doğrula" id="ok">
+		<div style="clear: both;"></div>
+		<div id="True">0</div>
+		<div id="False">0</div>
+
+		<div style="clear: both;"></div>
+		<input type="button" value="Oyuna Başla" id="newgame">
+		<input type="hidden" value="Oyunu Sonlandır" id="endgame">
+	</div>
+
+
+	<script>
+		//Verilenler
+		var Number1,Number2,Operator,Result,Ok,True=0,False=0;
+		//Beraberlikler
+		Number1=document.getElementById('number1');
+		Number2=document.getElementById('number2');
+		Operator=document.getElementById('operator');
+		Result=document.getElementById('result');
+		Ok=document.getElementById('ok');
+		True=document.getElementById('True');
+		False=document.getElementById('False');
+		NewGame=document.getElementById('newgame');
+		EndGame=document.getElementById('endgame');
+
+		Ok.type="hidden";
+		//Random Eded
+		function RandomNumber(min,max){
+			var number=Math.floor(Math.random()*(max-min))+min;
+			return number;
+		}
+		//Yeni oyun
+		function newGame(){
+			var operatorlar=["+","-","*","/"];
+			Operator.textContent=operatorlar[RandomNumber(0,4)];
+			Number1.textContent=RandomNumber(0,50);
+			Number2.textContent=RandomNumber(0,50);
+
+			if(Operator.textContent=="/")
+			{
+				while(true)
+				{
+					Number2.textContent=RandomNumber(0,50);
+					if(Number1.textContent%Number2.textContent==0)
+					{
+						break;
+					}
+				}
+			}
+		}
+
+		//Yeni oyunun daim yenilenmesi
+
+		NewGame.onclick=function(){
+			newGame();
+			Ok.type="button";
+			NewGame.type="hidden";
+			EndGame.type="button";
+		}
+		EndGame.onclick=function(){
+			Ok.type="hidden";
+			Number1.textContent="0";
+			Number2.textContent="0";
+			Operator.textContent="*";
+			True.textContent="0";
+			False.textContent="0";
+			Result.textContent="";
+			NewGame.type="button";
+			EndGame.type="hidden";
+		}
+
+		//Doğru Ve ya Yanlış Cavablar
+		Ok.onclick=function(){
+			var duzcavab,n1,n2;
+			n1=Number(Number1.textContent);
+			n2=Number(Number2.textContent);
+
+			switch(Operator.textContent)
+			{
+				case "+":duzcavab=n1+n2;break;
+				case "-":duzcavab=n1-n2;break;
+				case "/":duzcavab=n1/n2;break;
+				case "*":duzcavab=n1*n2;break;
+				default :break;
+			}
+			if(Result.value==duzcavab)
+			{
+				True.textContent=Number(True.textContent)+1;
+			}
+			else
+			{
+				False.textContent=Number(False.textContent)+1;
+			}
+			Result.value="";
+			newGame();
+		}
+
+	</script>
+</body>
+</html>
